@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "306974489575",
+    "project_id": "roll-543c2",
+    "storage_bucket": "roll-543c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306974489575:android:3bbea27296715761d39b42",
+        "android_client_info": {
+          "package_name": "com.example.roll"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306974489575-i30drvpver8p4gafn2io6lmnmj612gbo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATh2lnvYMqHGwTwLThTB_wrYsMuZDwn_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306974489575-i30drvpver8p4gafn2io6lmnmj612gbo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

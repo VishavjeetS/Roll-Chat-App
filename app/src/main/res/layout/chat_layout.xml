@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="5dp">
+        <TextView
+            android:id="@+id/nameRV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vishav"
+            android:textSize="20sp"
+            android:padding="7dp"
+            android:textColor="@color/white"/>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/cardview"
+        android:layout_marginTop="5dp"
+
+        android:background="@color/black"/>
+
+</RelativeLayout>

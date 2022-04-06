@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Roll</string>
+    <string name="show_contacts">Show Contacts</string>
+    <string name="log_out">Log out</string>
+    <string name="this_is_received_message">This is received message</string>
+    <string name="this_is_sent_message">This is sent message</string>
+</resources>

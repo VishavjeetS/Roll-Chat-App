@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="7dp">
+        <TextView
+            android:id="@+id/sentMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/this_is_sent_message"
+            android:background="#B39DDB"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:textColor="@color/black"/>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
