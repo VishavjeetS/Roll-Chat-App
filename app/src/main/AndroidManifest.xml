@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Roll">
         <activity
             android:name=".Util.MessageActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".Util.SignUp"
             android:exported="false" />
@@ -26,7 +27,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

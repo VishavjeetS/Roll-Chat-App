@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roll.Model.Message
+import com.example.roll.Model.user
 import com.example.roll.R
 import com.google.firebase.auth.FirebaseAuth
+import org.w3c.dom.Text
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MessageAdapter(private val context: Context, private val messageList:ArrayList<Message>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var RECEIVED = 2
@@ -27,12 +31,18 @@ class MessageAdapter(private val context: Context, private val messageList:Array
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val currentMessage = messageList[position]
+        val c = Calendar.getInstance()
+        val hour = c.get(Calendar.HOUR_OF_DAY)
+        val minute = c.get(Calendar.MINUTE)
+        val timeStamp = "$hour:$minute"
         if(holder.javaClass == SentViewHolder::class.java){
             val viewHolder = holder as SentViewHolder
             holder.sentMessage.text = currentMessage.message
+            holder.sentMessageTimeStamp.text = timeStamp
         }else{
             val viewHolder = holder as ReceiveViewHolder
             holder.receiveMessage.text = currentMessage.message
+            holder.receiveMessageTimeStamp.text = timeStamp
         }
     }
 
@@ -41,9 +51,11 @@ class MessageAdapter(private val context: Context, private val messageList:Array
     }
     class ReceiveViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val receiveMessage: TextView = itemView.findViewById(R.id.receivedMessage)
+        val receiveMessageTimeStamp: TextView = itemView.findViewById(R.id.receiveMessageTimeStamp)
     }
     class SentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val sentMessage: TextView = itemView.findViewById(R.id.sentMessage)
+        val sentMessageTimeStamp: TextView = itemView.findViewById(R.id.sentMessageTimeStamp)
     }
 
     override fun getItemViewType(position: Int): Int {

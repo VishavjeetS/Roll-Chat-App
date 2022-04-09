@@ -6,23 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#212121"
+    android:fitsSystemWindows="true"
     tools:context=".Util.MessageActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/message_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black">
 
-        <TextView
-            android:id="@+id/friendsName"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/message_toolbar"
             android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
             android:layout_height="wrap_content"
-            android:background="@color/black"
-            android:text=""
-            android:textSize="20sp"
-            android:textColor="@color/white" />
-    </androidx.appcompat.widget.Toolbar>
+            android:background="@color/black">
+
+            <TextView
+                android:id="@+id/friendsName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:text=""
+                android:textSize="20sp"
+                android:textColor="@color/white" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -30,7 +39,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/messageboxLL"
-        android:layout_below="@id/message_toolbar" />
+        android:layout_below="@id/appbar"
+        app:stackFromEnd="true"
+        tools:listitem="@layout/recieved" />
 
 
     <LinearLayout

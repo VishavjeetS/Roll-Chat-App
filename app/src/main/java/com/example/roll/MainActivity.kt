@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roll.Adapter.ChatAdapter
+import com.example.roll.Model.Message
 import com.example.roll.Model.user
 import com.example.roll.Util.Login
 import com.google.firebase.auth.FirebaseAuth
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var chatsRecyclerView: RecyclerView
     private lateinit var chatsAdapter: ChatAdapter
     private lateinit var chatList: ArrayList<user>
+    private lateinit var messageList: ArrayList<Message>
     private lateinit var MDRef: DatabaseReference
     private lateinit var toolbar: Toolbar
     private lateinit var mAuth: FirebaseAuth
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         chatsRecyclerView = findViewById(R.id.chatRV)
         chatList = ArrayList()
+        messageList = ArrayList()
         chatsAdapter = ChatAdapter(this, chatList)
         chatsRecyclerView.layoutManager = LinearLayoutManager(this)
         chatsRecyclerView.adapter = chatsAdapter

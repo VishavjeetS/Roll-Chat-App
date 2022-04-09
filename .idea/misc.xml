@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/visha/AndroidStudioProjects/Roll/app/src/main/res/drawable/receive_msg_bg.xml" value="0.153" />
+        <entry key="..\:/Users/visha/AndroidStudioProjects/Roll/app/src/main/res/drawable/send_msg_bg.xml" value="0.153" />
         <entry key="..\:/Users/visha/AndroidStudioProjects/Roll/app/src/main/res/layout/activity_login.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/visha/AndroidStudioProjects/Roll/app/src/main/res/layout/activity_main.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/visha/AndroidStudioProjects/Roll/app/src/main/res/layout/activity_sign_up.xml" value="0.25677083333333334" />
