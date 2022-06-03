@@ -18,7 +18,7 @@ import kotlin.collections.ArrayList
 
 class ChatAdapter(private val context: Context, private val chats:ArrayList<user>):RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
     private lateinit var MDRef: DatabaseReference
-    private lateinit var mAuth: FirebaseAuth
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.chat_layout, parent, false)
         return ChatViewHolder(view)
@@ -26,22 +26,16 @@ class ChatAdapter(private val context: Context, private val chats:ArrayList<user
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
         val currentUser = chats[position]
-        val c = Calendar.getInstance()
-        val hour = c.get(Calendar.HOUR_OF_DAY)
-        val minute = c.get(Calendar.MINUTE)
-        val timeStamp = "$hour:$minute"
-        holder.timeStampChat.text = timeStamp
         holder.name.text = currentUser.name
         MDRef = FirebaseDatabase.getInstance().getReference("chats").child(currentUser.uid.toString() + FirebaseAuth.getInstance().currentUser?.uid.toString()).child("messages")
-        mAuth = FirebaseAuth.getInstance()
         MDRef.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 for(postSnapshot in snapshot.children){
                     val user = postSnapshot.getValue(Message::class.java)
                     holder.lastMessage.text = user?.message.toString()
+                    holder.timeStampChat.text = user?.timeStamp.toString()
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
@@ -58,13 +52,10 @@ class ChatAdapter(private val context: Context, private val chats:ArrayList<user
     override fun getItemCount(): Int {
         return chats.size
     }
+
     class ChatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.nameRV)
         val lastMessage: TextView = itemView.findViewById(R.id.lastMessage)
         val timeStampChat: TextView = itemView.findViewById(R.id.timeStampChat)
-    }
-
-    private fun getLastMessage(lastMessage: TextView){
-
     }
 }

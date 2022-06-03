@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.roll.MainActivity
 import com.example.roll.R
@@ -14,7 +15,7 @@ class Login : AppCompatActivity(), FirebaseAuth.AuthStateListener {
     private lateinit var email:EditText
     private lateinit var password:EditText
     private lateinit var login:Button
-    private lateinit var signup:Button
+    private lateinit var signup:TextView
     private lateinit var mAuth:FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -31,28 +31,26 @@ class MessageAdapter(private val context: Context, private val messageList:Array
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val currentMessage = messageList[position]
-        val c = Calendar.getInstance()
-        val hour = c.get(Calendar.HOUR_OF_DAY)
-        val minute = c.get(Calendar.MINUTE)
-        val timeStamp = "$hour:$minute"
         if(holder.javaClass == SentViewHolder::class.java){
             val viewHolder = holder as SentViewHolder
             holder.sentMessage.text = currentMessage.message
-            holder.sentMessageTimeStamp.text = timeStamp
+            holder.sentMessageTimeStamp.text = currentMessage.timeStamp
         }else{
             val viewHolder = holder as ReceiveViewHolder
             holder.receiveMessage.text = currentMessage.message
-            holder.receiveMessageTimeStamp.text = timeStamp
+            holder.receiveMessageTimeStamp.text = currentMessage.timeStamp
         }
     }
 
     override fun getItemCount(): Int {
         return messageList.size
     }
+
     class ReceiveViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val receiveMessage: TextView = itemView.findViewById(R.id.receivedMessage)
         val receiveMessageTimeStamp: TextView = itemView.findViewById(R.id.receiveMessageTimeStamp)
     }
+
     class SentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val sentMessage: TextView = itemView.findViewById(R.id.sentMessage)
         val sentMessageTimeStamp: TextView = itemView.findViewById(R.id.sentMessageTimeStamp)

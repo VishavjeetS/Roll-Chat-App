@@ -70,16 +70,39 @@
             app:backgroundTint="@color/purple_700"
             app:cornerRadius="15dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/signup"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Sign up"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            app:backgroundTint="@color/purple_700"
-            app:cornerRadius="15dp" />
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="Don't have an account? "/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign up"
+                android:textSize="15sp"
+                android:textColor="@color/purple_700"
+                android:clickable="true"
+                android:id="@+id/signup"
+                android:focusable="true" />
+
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/signup"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Sign up"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textSize="20sp"-->
+<!--                app:backgroundTint="@color/purple_700"-->
+<!--                app:cornerRadius="15dp" />-->
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.roll.MainActivity
 import com.example.roll.Model.user
@@ -18,7 +19,7 @@ class SignUp : AppCompatActivity() {
     private lateinit var password: EditText
     private lateinit var name: EditText
     private lateinit var signup: Button
-    private lateinit var login: Button
+    private lateinit var login: TextView
     private lateinit var mAuth: FirebaseAuth
     private lateinit var DBRef: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {

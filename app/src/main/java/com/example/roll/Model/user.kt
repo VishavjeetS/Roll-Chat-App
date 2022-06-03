@@ -5,6 +5,7 @@ class user {
     var email:String? = null
     var uid:String? = null
     var message: String? = null
+    var friendsList: ArrayList<String?> = arrayListOf()
 
     constructor(){}
     constructor(name: String?, email: String?, uid: String?) {
